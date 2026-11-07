@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Task Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <h1>Student Task Manager</h1>
+        <p>Organize your studies. Complete your goals.</p>
+    </header>
+
+    <main class="container">
+
+        <section class="summary">
+            <div class="card">
+                <h3>Total Tasks</h3>
+                <p id="totalTasks">0</p>
+            </div>
+
+            <div class="card pending">
+                <h3>Pending Tasks</h3>
+                <p id="pendingTasks">0</p>
+            </div>
+
+            <div class="card completed">
+                <h3>Completed Tasks</h3>
+                <p id="completedTasks">0</p>
+            </div>
+        </section>
+
+        <section class="panel">
+            <h2>Add New Assignment</h2>
+
+            <form id="taskForm">
+
+                <label for="taskName">Assignment Name</label>
+                <input
+                    type="text"
+                    id="taskName"
+                    placeholder="Enter assignment name"
+                    required
+                    maxlength="80"
+                >
+
+                <label for="subject">Subject</label>
+                <input
+                    type="text"
+                    id="subject"
+                    placeholder="Enter subject"
+                    required
+                    maxlength="50"
+                >
+
+                <label for="deadline">Deadline</label>
+                <input type="date" id="deadline" required>
+
+                <label for="priority">Priority</label>
+                <select id="priority">
+                    <option value="Low">Low</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="High">High</option>
+                </select>
+
+                <button type="submit" class="add-btn">
+                    Add Assignment
+                </button>
+
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="task-heading">
+                <h2>My Assignments</h2>
+
+                <select id="filterTasks" aria-label="Filter assignments">
+                    <option value="all">All Tasks</option>
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+
+            <div id="taskList" class="task-list">
+                <p class="empty">No assignments added yet.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        Student Task Manager | Built with HTML, CSS and JavaScript
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
